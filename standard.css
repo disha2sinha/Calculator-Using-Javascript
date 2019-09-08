@@ -1,21 +1,38 @@
 body{
-	background:rgb(61, 52, 20);
-	//background:rgb(41, 1, 5);
-	
+	background:rgb(25, 1, 28);
 }
-.Display{
-	margin: 20px auto 5px auto;
-	width: 260px;
+.Displayresult
+{
+	margin: 0px 15px 5px 15px;
+	width: 250px;
 	height:50px;
-	border-style:inset;
-	border-color: rgb(228, 232, 5);
+	border-bottom-left-radius: 20%;
+	border-bottom-right-radius: 20%;
+	border:none;
 	text-align:right;
 	font-size:40px;
 	letter-spacing: 4px;
 	font-family:Lobster;
+	font-style: bolder;
 	background:rgb(66, 64, 64);
 	color:rgb(245, 243, 122);
 }
+.Displaytext{
+	margin: 20px 15px 0px 15px;
+	width: 250px;
+	height:20px;
+	border:none;
+	border-top-right-radius: 20%;
+	border-top-left-radius: 20%;
+	text-align:right;
+	font-size:10px;
+	letter-spacing: 4px;
+	font-family:Lobster;
+	font-style: italic;
+	background:rgb(66, 64, 64);
+	color:rgb(245, 243, 122);
+}
+
 .stan_bdy{
 	width:100px;
 	height:100px;
@@ -25,13 +42,13 @@ body{
 }
 .Calculator{
 	width:290px;
-	height:450px;
+	height:470px;
 	border:outset;
 	border-color: white;
 	margin:auto;
 	margin-top: 80px;
 	position:relative;
-	background:rgba(242, 87, 123);
+	background:rgb(242, 87, 123);
 }
 .head{
  	width:98px;
@@ -46,6 +63,7 @@ body{
 	font-size:100%;
 	font-family:Satisfy;
 	color: rgb(237, 9, 62);
+	border-radius: 70%;
 }
 #btn1:hover{
 	color:white;
@@ -59,9 +77,10 @@ body{
 	font-weight: bolder;
 	font-size:175%;
 	color:rgb(245, 43, 7);
-
+	border-radius: 20%;
 }
 #btn:hover{
 	color:white;
 	background:rgb(245, 43, 7); 
 }
+
