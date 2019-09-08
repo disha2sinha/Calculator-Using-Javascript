@@ -6,63 +6,64 @@
 	<link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> 
 	<link rel="stylesheet" type="text/css" href="standard.css">
+	<script type="text/javascript" src="Standard.js"></script>
 </head>
 <body>
 	<div class ="Calculator">
-
-		<div class="Display">
-			0
-		</div>
+		<form name="form">
+		<input type="text" class="Displaytext" placeholder=0 readonly="readonly" name="displaytext">
+		<input type="text" class="Displayresult" readonly="readonly" name="displayresult">
 	<table class="head">
 		<tr class="row1">
-			<th><button id="btn1">MC</button></th>
-			<th><button id="btn1">MR</button></th>
-			<th><button id="btn1">M+</button></th>
-			<th><button id="btn1">M-</button></th>
-			<th><button id="btn1">MS</button></th>
-			<th><button id="btn1">M<sup>&#9662;</sup></button></th>
+			<th><button id="btn1" value="MC">MC</button></th>
+			<th><button id="btn1" value="MR">MR</button></th>
+			<th><button id="btn1" value="M+">M+</button></th>
+			<th><button id="btn1" value="M-">M-</button></th>
+			<th><button id="btn1" value="MS">MS</button></th>
+			<th><button id="btn1" value="M">M<sup>&#9662;</sup></button></th>
 		</tr>
 	</table>
 		<table class="stan_bdy">
 		<tr class="row2">
-			<th><button id="btn">%</button></th>
-			<th><button id="btn">x<sup>2</sup></button></th>
-			<th><button id="btn">&radic;</button></th>
-			<th><button id="btn">1/x</button></th>
+			<th><input type="button" id="btn" value='%'  onclick="display()"></th>
+			<th><input type="button" id="btn" value='x&#x00B2;' onclick="display('&#x00B2;')"></th>
+			<th><input type="button" id="btn" value='&radic;' onclick="display('&radic;')"></th>
+			<th><input type="button" id="btn" value="1/x"  onclick="display('1/')"></th>
 		</tr>
 		<tr class="row3">
-			<th><button id="btn">CE</button></th>
-			<th><button id="btn">C</button></th>
-			<th><button id="btn">.</button></th>
-			<th><button id="btn">&divide;</button></th>
+			<th><button id="btn" value="CE" onclick="">CE</button></th>
+			<th><button id="btn" value="C"  onclick="">C</button></th>
+			<th><input type="button" id="btn" name="decimal" value='.'  onclick="display(this.value,this.name)"></th>
+			<th><input type="button" id="btn" name="operator" value='&divide;'  onclick="display(this.value,this.name)"></th>
 		</tr>
 		<tr class="row4">
-			<th><button id="btn">7</button></th>
-			<th><button id="btn">8</button></th>
-			<th><button id="btn">9</button></th>
-			<th><button id="btn">&times;</button></th>
+			<th><input type="button" id="btn" name="number" value='7'  onclick="display(this.value,this.name)"></th>
+			<th><input type="button" id="btn" name="number" value='8'  onclick="display(this.value,this.name)"></th>
+			<th><input type="button" id="btn" name="number" value='9'  onclick="display(this.value,this.name)"></th>
+			<th><input type="button" id="btn" name="operator" value='&times;'  onclick="display(this.value,this.name)"></th>
 		</tr>
 		<tr class="row5">
-			<th><button id="btn">4</button></th>
-			<th><button id="btn">5</button></th>
-			<th><button id="btn">6</button></th>
-			<th><button id="btn">&minus;</button></th>
+			<th><input type="button" id="btn" name="number" value='4'  onclick="display(this.value,this.name)"></th>
+			<th><input type="button" id="btn" name="number" value='5'  onclick="display(this.value,this.name)"></th>
+			<th><input type="button" id="btn" name="number" value='6'  onclick="display(this.value,this.name)"></th>
+			<th><input type="button" id="btn" name="operator" value='&minus;' onclick="display(this.value,this.name)"></th>
 			
 		</tr>
 		<tr class="row6">
-			<th><button id="btn">1</button></th>
-			<th><button id="btn">2</button></th>
-			<th><button id="btn">3</button></th>
-			<th><button id="btn">&plus;</button></th>
+			<th><input type="button" id="btn" name="number" value='1' onclick="display(this.value,this.name)"></th>
+			<th><input type="button" id="btn" name="number" value='2'  onclick="display(this.value,this.name)"></th>
+			<th><input type="button" id="btn" name="number" value='3'  onclick="display(this.value,this.name)"></th>
+			<th><input type="button" id="btn" name="operator" value='&plus;'  onclick="display(this.value,this.name)"></th>
 		</tr>
 		<tr class="row7">
-			<th><button id="btn">&plusmn;</button></th>
-			<th><button id="btn">0</button></th>
-			<th><button id="btn">=</button></th>
-			<th><button id="btn">&#x232b;</button></th>
+			<th><input type="button" id="btn" name="negate" value='&plusmn;' onclick=""></th>
+			<th><input type="button" id="btn" name="number" value='0' onclick="display(this.value,this.name)"></th>
+			<th><input type="button" id="btn" name="equate" value='='  onclick=""></th>
+			<th><input type="button" id="btn" value='&#x232b;'  onclick=""></th>
 		</tr>
 		
 	</table>
+</form>
 </div>
 </body>
 </html>
