@@ -1,69 +1,195 @@
-<!DOCTYPE html>
-<html>
-<meta charset="utf-8">
-<head>
-	<title>Welcome to My Calculator</title>
-	<link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> 
-	<link rel="stylesheet" type="text/css" href="standard.css">
-	<script type="text/javascript" src="Standard.js"></script>
-</head>
-<body>
-	<div class ="Calculator">
-		<form name="form">
-		<input type="text" class="Displaytext" placeholder=0 readonly="readonly" name="displaytext">
-		<input type="text" class="Displayresult" readonly="readonly" name="displayresult">
-	<table class="head">
-		<tr class="row1">
-			<th><button id="btn1" value="MC">MC</button></th>
-			<th><button id="btn1" value="MR">MR</button></th>
-			<th><button id="btn1" value="M+">M+</button></th>
-			<th><button id="btn1" value="M-">M-</button></th>
-			<th><button id="btn1" value="MS">MS</button></th>
-			<th><button id="btn1" value="M">M<sup>&#9662;</sup></button></th>
-		</tr>
-	</table>
-		<table class="stan_bdy">
-		<tr class="row2">
-			<th><input type="button" id="btn" value='%'  onclick="display()"></th>
-			<th><input type="button" id="btn" value='x&#x00B2;' onclick="display('&#x00B2;')"></th>
-			<th><input type="button" id="btn" value='&radic;' onclick="display('&radic;')"></th>
-			<th><input type="button" id="btn" value="1/x"  onclick="display('1/')"></th>
-		</tr>
-		<tr class="row3">
-			<th><button id="btn" value="CE" onclick="">CE</button></th>
-			<th><button id="btn" value="C"  onclick="">C</button></th>
-			<th><input type="button" id="btn" name="decimal" value='.'  onclick="display(this.value,this.name)"></th>
-			<th><input type="button" id="btn" name="operator" value='&divide;'  onclick="display(this.value,this.name)"></th>
-		</tr>
-		<tr class="row4">
-			<th><input type="button" id="btn" name="number" value='7'  onclick="display(this.value,this.name)"></th>
-			<th><input type="button" id="btn" name="number" value='8'  onclick="display(this.value,this.name)"></th>
-			<th><input type="button" id="btn" name="number" value='9'  onclick="display(this.value,this.name)"></th>
-			<th><input type="button" id="btn" name="operator" value='&times;'  onclick="display(this.value,this.name)"></th>
-		</tr>
-		<tr class="row5">
-			<th><input type="button" id="btn" name="number" value='4'  onclick="display(this.value,this.name)"></th>
-			<th><input type="button" id="btn" name="number" value='5'  onclick="display(this.value,this.name)"></th>
-			<th><input type="button" id="btn" name="number" value='6'  onclick="display(this.value,this.name)"></th>
-			<th><input type="button" id="btn" name="operator" value='&minus;' onclick="display(this.value,this.name)"></th>
-			
-		</tr>
-		<tr class="row6">
-			<th><input type="button" id="btn" name="number" value='1' onclick="display(this.value,this.name)"></th>
-			<th><input type="button" id="btn" name="number" value='2'  onclick="display(this.value,this.name)"></th>
-			<th><input type="button" id="btn" name="number" value='3'  onclick="display(this.value,this.name)"></th>
-			<th><input type="button" id="btn" name="operator" value='&plus;'  onclick="display(this.value,this.name)"></th>
-		</tr>
-		<tr class="row7">
-			<th><input type="button" id="btn" name="negate" value='&plusmn;' onclick=""></th>
-			<th><input type="button" id="btn" name="number" value='0' onclick="display(this.value,this.name)"></th>
-			<th><input type="button" id="btn" name="equate" value='='  onclick=""></th>
-			<th><input type="button" id="btn" value='&#x232b;'  onclick=""></th>
-		</tr>
-		
-	</table>
-</form>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="standard.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript" src="Standard.js"></script>
+
+    <title>Calculator</title>
+  </head>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <nav class="navbar bg-secondary navbar-dark fixed-top"><!--navbar-expand-md can be removed to ALWAYS hide navbar links and display the toggler button.-->
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">CALCULATOR</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="nav navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#Standard">Standard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#Scientific">Scientific</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div id="Standard">
+  <div class="container">
+  <form class="form">
+
+    <div class="table-responsive-sm">
+      
+
+      <table class="table table-sm table-light">
+    <h2 class="text-*-center">STANDARD</h2>
+
+        <tr class="row">
+      <td colspan="4"><input type="text" class="form-control input-lg" id="inputlg" readonly="readonly" name="displayresult"></td>
+          
+        </tr>
+        <tr class="row">
+        <td class="col-*-*" colspan="3" style="text-align: center;"><input type="button" class="btn btn-outline-dark" value='C'  onclick=""></td> 
+        <td class="col-*-*" colspan="3" style="text-align: center;"><input type="button" class="btn btn-outline-dark" value='&#x232b;'  onclick=""></td> 
+
+        <td colspan="2" align="center"><input type="button" class="btn btn-default btn-secondary" id="equate" name="equate" value='='  onclick=""></td>
+
+        </tr>
+      <tr class="row">
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='7'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='8'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='9'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="operator" value='&times;'  onclick="display(this.value,this.name)"></td>
+    </tr>
+    <tr class="row">
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='4'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='5'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='6'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="operator" value='&minus;' onclick="display(this.value,this.name)"></td>
+      
+    </tr>
+    <tr class="row">
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='1' onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='2'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='3'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="operator" value='&plus;'  onclick="display(this.value,this.name)"></td>
+    </tr>
+    <tr class="row">
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="negate" value='&plusmn;' onclick=""></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='0' onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="decimal" value='.'  onclick=""></td>
+
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="operator" value='&divide;'  onclick="display(this.value,this.name)"></td>
+
+    </tr>
+
+
+      </table>
+    </div>
+  </form>
 </div>
-</body>
+</div>
+
+
+<div id="Scientific">
+  <div class="container">
+
+  <form class="form">
+
+    <div class="table-responsive">
+      
+
+      <table class="table table-light">
+    <h2 class="text-*-center">SCIENTIFIC</h2>
+
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+
+        </tr>
+        <tr class="row">
+      <th colspan="6"><input type="text" class="form-control input-lg" id="inputlg" readonly="readonly" name="displayresult"></th>
+          
+        </tr>
+        <tr class="row">
+        <td class="col-*-*" ><input type="button" class="btn btn-outline-dark" value='C'  onclick=""></td> 
+        <td class="col-*-*"><input type="button" class="btn btn-outline-dark" value='&#x232b;'  onclick=""></td> 
+
+        <td colspan="4" align="center"><input type="button" class="btn btn-default btn-secondary" id="equate" name="equate" value='='  onclick=""></td>
+
+        </tr>
+      <tr class="row">
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="lg" value='lg' onclick="display(this.value,this.name)"></td>
+
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='7'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='8'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='9'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="operator" value='&times;'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="power" value='^' onclick="display(this.value,this.name)"></td>
+
+    </tr>
+    <tr class="row">
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="ln" value='ln'  onclick="display(this.value,this.name)"></td>
+
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='4'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='5'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='6'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="operator" value='&minus;' onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="percent" value='%' onclick="display(this.value,this.name)"></td>
+
+      
+    </tr>
+    <tr class="row">
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="1/x" value='1/x'  onclick="display(this.value,this.name)"></td>
+
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='1' onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='2'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='3'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="operator" value='&plus;'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="Factorial" value='X!' onclick="display(this.value,this.name)"></td>
+
+    </tr>
+      <tr class="row">
+
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="pi" value='&Pi;'  onclick="display(this.value,this.name)"></td>
+
+        <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="negate" value='&plusmn;' onclick=""></td>
+        <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="number" value='0' onclick="display(this.value,this.name)"></td>
+        <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="decimal" value='.'  onclick=""></td>
+
+        <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="operator" value='&divide;'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="root" value='&radic;' onclick="display(this.value,this.name)"></td>
+
+
+      </tr>
+      <tr class="row">
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="(" value='('  onclick="display(this.value,this.name)"></td>
+
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="sin" value='sin' onclick=""></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="cos" value='cos' onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="tan" value='tan'  onclick=""></td>
+
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name="e" value='e'  onclick="display(this.value,this.name)"></td>
+      <td class="col-*-*"><input type="button" class="btn btn-outline-dark" name=")" value=')' onclick="display(this.value,this.name)"></td>
+
+    </tr>
+
+
+      </table>
+    </div>
+  </form>
+</div>
+</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>
