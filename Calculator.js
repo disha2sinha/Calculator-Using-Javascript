@@ -206,7 +206,6 @@ function negative_s(){
 }
 function percentage()
 {
-	calculate_s();
 
 
 	try{
