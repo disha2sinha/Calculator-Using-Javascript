@@ -1,11 +1,9 @@
-/*.navbar-brand{
-	text-align:center;
-	color:yellow;
-}*/
 body{
 	position: relative;
 	overflow-y: scroll;
 	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
 }
 
 .navbar-brand ,.nav-item{
@@ -23,23 +21,29 @@ h2{
 	overflow-x:auto !important;
 	white-space: nowrap;
 	border: 0;
-	margin:20%;
+	margin-left:20%;
+	margin-right:20%;
+	margin-top: -40px;
+	margin-bottom: 30px;
 	padding:20%;
 	font-family: 'Lobster';
 	font-weight: bolder;
 }
 
 #Scientific .table-responsive{
-	//display: block;
+	display: block;
 	overflow-x: auto !important;
-	//white-space: nowrap;
+	white-space: nowrap;
 	border: 0;
-	margin:20%;
+	margin-left:20%;
+	margin-right:20%;
+	margin-top: 30px;
 	cursor: pointer;
-	padding:10%;
+	padding-top:20%;
+	padding-left: 10%;
+	padding-right: 10%;
 	font-family: 'Lobster';
 	font-weight: bolder;
-
 }
 /*.row{
 	align-items: center;
