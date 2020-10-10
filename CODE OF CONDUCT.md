@@ -24,5 +24,4 @@ Inappropriate or unwanted physical contact
 Intimidation or bullying (online or in-person)
 Unwelcome sexual attention
 Reporting and Enforcement
-If you are the subject of, or witness to any violations of this Code of Conduct, please contact us by submitting an incident report, or email dockercon@docker.com
-If necessary, conference staff are empowered to take appropriate actions that may include, but are not limited to, warnings, expulsion from the conference without refund, and referrals to venue security or local law enforcement.
+
